@@ -9,13 +9,14 @@ class Plot2D:
         self.ax.set_title("2D Plane World")
 
         self.ax.scatter(goal[0], goal[1], c='black')  # goal
+        self.ax.scatter(start[0], start[1], c='green')
         self.point, = self.ax.plot(start[0], start[1], 'ro')
         self.path_line, = self.ax.plot([], [], 'b-')
 
     def update(self, pos, path_x, path_y):
         self.point.set_data(pos[0], pos[1])
         self.path_line.set_data(path_x, path_y)
-        plt.pause(0.05)
+        plt.pause(0.1)
 
     def show(self):
         plt.show()
